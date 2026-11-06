@@ -10,51 +10,51 @@ Repositório individual contendo **16 cenários de teste documentais** distribu�
 
 **Importante:** os IDs são os IDs originais dos **critérios de aceitação no OpenProject**, e não identificadores RF inventados. Regras pendentes permanecem perguntas em `docs/pendencias_stakeholders.md`. O cenário CT016 de Relatório de Usuários está explicitamente **condicionado** à criação/aprovação dos critérios de aceitação.
 
-## Estrutura
+## Estrutura do repositório
 
 ```text
-bvapp-cenarios-eduardo-brito/
+bvapp-cenarios-eduardo-brito-revisado/
 ├── README.md
 ├── .gitignore
-├── pyproject.toml
-├── cooperativa/scenarios/        # CT001–CT004
-├── fornecedores/scenarios/       # CT005–CT009
-├── relatorios/scenarios/         # CT010–CT016
+├── functional_tests/
+│   ├── cooperativa/
+│   │   ├── ct001_manutencao_cooperativa_crud.md
+│   │   ├── ct002_validacao_cadastro.md
+│   │   └── ct003_permissoes_consulta.md
+│   ├── fornecedores/
+│   │   ├── ct004_manutencao_fornecedores_crud.md
+│   │   ├── ct005_cnpj_duplicado.md
+│   │   ├── ct006_pesquisa_filtros.md
+│   │   └── ct007_alteracao_status.md
+│   └── relatorios/
+│       ├── ct008_relatorio_cooperados.md
+│       ├── ct009_relatorio_perfis.md
+│       ├── ct010_relatorio_unidades.md
+│       ├── ct011_relatorio_usinas.md
+│       ├── ct012_relatorio_entidades.md
+│       └── ct013_exportacao_relatorios.md
 └── docs/
-    ├── pendencias_stakeholders.md
     ├── rastreabilidade.md
-    └── roteiro_apresentacao.md
+    ├── pendencias_stakeholders.md
+    ├── relatorio_usuarios_pendente.md
+    ├── roteiro_apresentacao.md
+    └── guia_migracao.md
 ```
 
-Não há dependências de execução. Python é uma referência organizacional; todos os cenários são arquivos Markdown independentes, facilmente transferíveis para testes Python/Django quando os requisitos forem validados.
+## Fontes e limites
 
-## Índice de cenários
+1. Planilha de walkthrough entregue pelo autor, especialmente dúvidas Q01–Q31.
+2. PDF `bvapp_All_open_2026-11-05_20-50.pdf` (OpenProject, IDs de Feature, User Story e CA).
+3. ZIP do backend BVapp, exclusivamente como apoio para identificar divergências; a implementação não substitui requisitos.
+4. Os dois ZIPs de colegas foram usados **somente como referências de organização e formatação**, sem copiar sua autoria.
 
-| Código | Recorte | Cenário | Critérios relacionados |
-|---|---|---|---|
-| CT001 | Cooperativa | [Inclusão de dados obrigatórios e opcionais da cooperativa](cooperativa/scenarios/ct001_inclusao_de_dados_obrigatorios_e_opcionais_da_cooperativa.md) | #24098 CA01; #24099 CA02; #24100 CA03 |
-| CT002 | Cooperativa | [Bloqueio de inclusão com campos obrigatórios ausentes](cooperativa/scenarios/ct002_bloqueio_de_inclusao_com_campos_obrigatorios_ausentes.md) | #24098 CA01; #24099 CA02 |
-| CT003 | Cooperativa | [Consulta dos dados cadastrais e controle de acesso](cooperativa/scenarios/ct003_consulta_dos_dados_cadastrais_e_controle_de_acesso.md) | #24106 CA01; #24107 CA02; #24108 CA03 |
-| CT004 | Cooperativa | [Atualização de dados obrigatórios e rastreabilidade](cooperativa/scenarios/ct004_atualizacao_de_dados_obrigatorios_e_rastreabilidade.md) | #24117 CA01; #24119 CA02; #24123 CA03; #24125 CA04; #24126 CA05 |
-| CT005 | Fornecedores | [Inclusão de fornecedor e campos de cadastro](fornecedores/scenarios/ct005_inclusao_de_fornecedor_e_campos_de_cadastro.md) | #24315 CA01; #24322 CA02; #24325 CA03 |
-| CT006 | Fornecedores | [Impedimento de CNPJ duplicado no cadastro](fornecedores/scenarios/ct006_impedimento_de_cnpj_duplicado_no_cadastro.md) | #24335 CA04; #24315 CA01 |
-| CT007 | Fornecedores | [Consulta, pesquisa e filtro de fornecedores](fornecedores/scenarios/ct007_consulta_pesquisa_e_filtro_de_fornecedores.md) | #24364 CA01; #24365 CA02; #24366 CA03 |
-| CT008 | Fornecedores | [Atualização do fornecedor e proteção dos campos obrigatórios](fornecedores/scenarios/ct008_atualizacao_do_fornecedor_e_protecao_dos_campos_obrigatorios.md) | #24358 CA01; #24359 CA02; #24360 CA03 |
-| CT009 | Fornecedores | [Alteração de status e registro de data](fornecedores/scenarios/ct009_alteracao_de_status_e_registro_de_data.md) | #24350 CA01; #24351 CA02 |
-| CT010 | Relatorios | [Relatório de cooperados com filtros e data de ingresso](relatorios/scenarios/ct010_relatorio_de_cooperados_com_filtros_e_data_de_ingresso.md) | #23808 CA01; #23810 CA02; #23822 CA03; #23823 CA04; #23824 CA05; #23826 CA07 |
-| CT011 | Relatorios | [Relatório de perfis e permissões](relatorios/scenarios/ct011_relatorio_de_perfis_e_permissoes.md) | #23837 CA01; #23839 CA02; #23840 CA03; #23846 CA05 |
-| CT012 | Relatorios | [Relatório de unidades consumidoras por cooperado](relatorios/scenarios/ct012_relatorio_de_unidades_consumidoras_por_cooperado.md) | #23858 CA01; #23859 CA02; #23861 CA03; #23863 CA04; #23864 CA05; #23867 CA07 |
-| CT013 | Relatorios | [Relatório de usinas por status e localização](relatorios/scenarios/ct013_relatorio_de_usinas_por_status_e_localizacao.md) | #23891 CA01; #23892 CA02; #23893 CA03; #23895 CA05 |
-| CT014 | Relatorios | [Relatório de entidades externas por tipo e status](relatorios/scenarios/ct014_relatorio_de_entidades_externas_por_tipo_e_status.md) | #23912 CA01; #23914 CA02; #23915 CA03; #23917 CA05 |
-| CT015 | Relatorios | [Exportação de relatórios em PDF ou CSV](relatorios/scenarios/ct015_exportacao_de_relatorios_em_pdf_ou_csv.md) | #23825 CA06; #23844 CA04; #23866 CA06; #23894 CA04; #23916 CA04 |
-| CT016 | Relatorios | [Relatório de usuários — cenário condicionado à definição de critérios](relatorios/scenarios/ct016_relatorio_de_usuarios_cenario_condicionado_a_definicao_de_criteri.md) | #27052 Feature (sem critérios de aceitação); US #27053 |
+Quando existe contradição ou ausência de regra, a especificação preserva a dúvida. Em particular, endereço de fornecedor é obrigatório em #24315 e opcional em #24325. Ativar/inativar não equivale a excluir.
 
-## Checklist de conformidade
+## Conferência
 
-- [x] Mais de dez cenários individuais de documentação
-- [x] Autoria informada em todos os cenários
-- [x] Objetivo, IDs originais, ator, fluxos, regras, dados e resultados
-- [x] Questões e conflitos sinalizados sem inventar regras
-- [x] Separação por recorte e índice de rastreabilidade
-- [ ] Decisões dos stakeholders incorporadas (pendente)
-- [ ] Repositório pessoal publicado e link enviado (a cargo do autor)
+- [x] 13 cenários documentados e identificados por Eduardo Brito Oliveira
+- [x] Rastreabilidade de requisitos e pendências
+- [x] Fluxos e resultados esperados, sem implementação
+- [x] Arquivos de manutenção com a etapa de exclusão assinalada como não especificada
+- [ ] Esclarecimentos dos stakeholders e eventual complementação dos cenários CRUD
+- [ ] Publicação do repositório individual no GitHub

@@ -1,13 +1,13 @@
-# Roteiro sugerido — apresentação individual (5 minutos)
+# Roteiro de apresentação — cerca de 5 minutos
 
-**0:00–0:40** — Apresente-se, explique BVapp, Gestão de Pessoas e a origem dos requisitos revisados.
+**Autor: Eduardo Brito Oliveira.**
 
-**0:40–1:25** — Mostre `README.md`, as três pastas de domínio e os 16 cenários com autoria.
+**0:00–0:40 | Contexto.** BVapp, módulo Gestão de Pessoas, recortes Cooperativa, Fornecedores e Relatórios. A tarefa é **documentar**, não implementar nem executar testes.
 
-**1:25–3:40** — Abra `fornecedores/scenarios/ct006_impedimento_de_cnpj_duplicado_no_cadastro.md` e explique objetivo, critérios #24335/#24315, pré-condição, fluxo principal, alternativos, RN e resultado observável. Em seguida, mostre CT005 para ilustrar o conflito de endereço obrigatório versus opcional.
+**0:40–1:25 | Estrutura.** Mostrar `README.md`, `functional_tests/` (13 arquivos, separados por área), `docs/rastreabilidade.md` e `docs/pendencias_stakeholders.md`.
 
-**3:40–4:25** — Mostre `docs/pendencias_stakeholders.md`: Q13 e Q21 como exemplos de decisões não inventadas.
+**1:25–3:10 | Cenário demonstrado.** Abrir `functional_tests/fornecedores/ct004_manutencao_fornecedores_crud.md`. Explicar criar, consultar, atualizar e **exclusão pendente**. Mostrar um fluxo alternativo: CNPJ duplicado e a contradição do endereço obrigatório/opcional.
 
-**4:25–5:00** — Explique por que não escreveu código nem chamou inativação de exclusão; encerre indicando o link do repositório no GitHub.
+**3:10–4:15 | Exemplo verificável.** Abrir `ct005_cnpj_duplicado.md` e mostrar entrada de CNPJ repetido, resultado esperado (impedir cadastro) e dúvida sobre normalização/inativos.
 
-**Antes da apresentação:** teste a abertura do repositório público no navegador, confirme o caminho real dos arquivos e revise os critérios ainda não validados.
+**4:15–5:00 | Rastreabilidade e conclusão.** Mostrar os IDs do OpenProject e justificar por que `relatorio_usuarios_pendente.md` não foi contado como cenário testável. Explicar que a documentação será refinada após validação dos stakeholders.
