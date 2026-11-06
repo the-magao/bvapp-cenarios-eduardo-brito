@@ -1,0 +1,6 @@
+[project]
+name = "bvapp-cenarios-eduardo-brito"
+version = "0.1.0"
+description = "Documentacao de cenarios VVTS para Gestao de Pessoas — BVapp"
+requires-python = ">=3.11"
+dependencies = []
