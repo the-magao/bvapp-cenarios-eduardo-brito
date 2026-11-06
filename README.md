@@ -8,8 +8,6 @@
 
 Repositório individual contendo **16 cenários de teste documentais** distribuídos nos recortes **Cooperativa, Fornecedores e Relatórios**, tomando como referência o exemplo UC001 — Manter produtos. **Não contém sistema, telas, testes executáveis nem resultados de execução**: a entrega solicitou apenas a documentação e organização dos arquivos.
 
-As fontes foram: (1) planilha `Eduardo_Brito_Oliveira_-_BVapp-walkthrough-requisitos-funcionais_.xlsx` (checklist, revisões e Q01–Q31); (2) PDF OpenProject `bvapp_All_open_2026-11-05_20-50.pdf`; (3) ZIP do backend BVapp para identificar divergências entre implementação e especificação; (4) ZIP do colega apenas como inspiração de estrutura, **sem reutilização de autoria ou de conteúdo**.
-
 **Importante:** os IDs são os IDs originais dos **critérios de aceitação no OpenProject**, e não identificadores RF inventados. Regras pendentes permanecem perguntas em `docs/pendencias_stakeholders.md`. O cenário CT016 de Relatório de Usuários está explicitamente **condicionado** à criação/aprovação dos critérios de aceitação.
 
 ## Estrutura
@@ -50,17 +48,6 @@ Não há dependências de execução. Python é uma referência organizacional; 
 | CT014 | Relatorios | [Relatório de entidades externas por tipo e status](relatorios/scenarios/ct014_relatorio_de_entidades_externas_por_tipo_e_status.md) | #23912 CA01; #23914 CA02; #23915 CA03; #23917 CA05 |
 | CT015 | Relatorios | [Exportação de relatórios em PDF ou CSV](relatorios/scenarios/ct015_exportacao_de_relatorios_em_pdf_ou_csv.md) | #23825 CA06; #23844 CA04; #23866 CA06; #23894 CA04; #23916 CA04 |
 | CT016 | Relatorios | [Relatório de usuários — cenário condicionado à definição de critérios](relatorios/scenarios/ct016_relatorio_de_usuarios_cenario_condicionado_a_definicao_de_criteri.md) | #27052 Feature (sem critérios de aceitação); US #27053 |
-
-## Sobre CRUD e inativação
-
-A atividade pede **criar, consultar, atualizar e excluir em um mesmo cenário quando houver um CRUD**. Porém, os requisitos selecionados descrevem inclusão, consulta, atualização e **alteração de status**, sem especificar **exclusão**. Portanto, não se nomeou nenhum fluxo de inativação como excluir nem se criou uma exclusão imaginária. Deve-se esclarecer com os stakeholders se há requisito de exclusão e como se relaciona ao status.
-
-## Como usar no GitHub
-
-1. Crie um repositório individual público no GitHub (por exemplo, `bvapp-cenarios-eduardo-brito`).
-2. Extraia este ZIP e envie o conteúdo da pasta raiz para o repositório.
-3. Confirme que o professor consegue abrir os `.md` individualmente e visualizar este README.
-4. Compartilhe o endereço verdadeiro do **seu repositório** no Classroom (não foi possível publicar no GitHub automaticamente nesta entrega).
 
 ## Checklist de conformidade
 
